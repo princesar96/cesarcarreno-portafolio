@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root{
-  --paper:#0B1220;
-  --paper-alt:#111A2C;
-  --ink:#EDEFF4;
-  --ink-soft:#B8C0D2;
-  --muted:#7C8AA5;
-  --green:#3E8E7E;
-  --red:#C4622D;
-  --line:rgba(237,239,244,0.12);
-  --line-strong:rgba(237,239,244,0.24);
+  --paper:#FFFFFF;
+  --paper-alt:#F3F2EE;
+  --ink:#15181F;
+  --ink-soft:#3C4250;
+  --muted:#6B7280;
+  --green:#2C6E5E;
+  --red:#B84E24;
+  --line:rgba(21,24,31,0.12);
+  --line-strong:rgba(21,24,31,0.22);
   --display:'Fraunces',Georgia,serif;
   --body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;

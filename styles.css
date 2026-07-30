@@ -250,7 +250,7 @@ a.inline-link:hover{color:var(--ink);}
 }
 
 .poster-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
-.poster-row a{border:1px solid var(--line-strong);display:block;}
+.poster-row img{border:1px solid var(--line-strong);}
 .poster-row img{width:100%;}
 @media (max-width:560px){.poster-row{grid-template-columns:1fr;}}
 

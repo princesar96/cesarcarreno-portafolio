@@ -357,3 +357,16 @@ footer a:hover{color:var(--red);}
   html{scroll-behavior:auto;}
   *{transition:none !important;}
 }
+
+/* -------- Lightbox -------- */
+.lightbox-img{cursor:zoom-in;}
+.lightbox-overlay{
+  position:fixed;inset:0;background:rgba(11,18,32,.92);
+  display:none;align-items:center;justify-content:center;
+  z-index:300;padding:32px;cursor:zoom-out;
+}
+.lightbox-overlay.active{display:flex;}
+.lightbox-overlay img{
+  max-width:90vw;max-height:90vh;width:auto;
+  border:1px solid var(--line-strong);
+}

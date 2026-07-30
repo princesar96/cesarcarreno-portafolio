@@ -14,3 +14,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  var overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  var overlayImg = document.createElement('img');
+  overlay.appendChild(overlayImg);
+  document.body.appendChild(overlay);
+
+  document.querySelectorAll('.lightbox-img').forEach(function (img) {
+    img.addEventListener('click', function () {
+      overlayImg.src = img.src;
+      overlayImg.alt = img.alt;
+      overlay.classList.add('active');
+    });
+  });
+
+  overlay.addEventListener('click', function () {
+    overlay.classList.remove('active');
+    overlayImg.src = '';
+  });
+});

@@ -491,3 +491,75 @@ section.skills{padding:8px 0 56px;}
   max-width:90vw;max-height:90vh;width:auto;
   border:1px solid var(--line-strong);
 }
+
+/* -------- Franja de artistas y proyectos (marquee) -------- */
+section.band{background:var(--ink);color:var(--paper);padding:56px 0 60px;overflow:hidden;margin-top:56px;border-top:5px solid var(--red);}
+.band-head{margin-bottom:34px;}
+.band-head .eyebrow{color:#C9CDD6;}
+.band-head h2{color:var(--paper);margin:10px 0 0;max-width:720px;}
+.marquee{display:flex;flex-direction:column;gap:18px;}
+.marquee-row{
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+}
+.marquee-track{
+  list-style:none;margin:0;padding:0;display:flex;width:max-content;
+  animation:marquee-left 120s linear infinite;
+}
+.marquee-row.to-right .marquee-track{animation-name:marquee-right;animation-duration:140s;}
+.marquee-row:hover .marquee-track{animation-play-state:paused;}
+.marquee-track li{
+  display:flex;align-items:center;white-space:nowrap;
+  font-family:var(--display);font-weight:600;text-transform:uppercase;
+  font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.1;letter-spacing:.01em;
+  color:var(--paper);
+}
+.marquee-row.to-right .marquee-track li{color:transparent;-webkit-text-stroke:1px #E9D9CB;}
+.marquee-track li::after{
+  content:"";flex:none;width:12px;height:12px;background:var(--red);
+  margin:0 .9em;
+}
+@keyframes marquee-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes marquee-right{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+@media (prefers-reduced-motion: reduce){
+  .marquee-track{animation:none !important;width:auto;flex-wrap:wrap;row-gap:10px;padding:0 28px;}
+  .marquee-track li[aria-hidden="true"]{display:none;}
+  .marquee-row{-webkit-mask-image:none;mask-image:none;}
+}
+
+/* -------- Línea de tiempo de experiencias -------- */
+section.exp{padding:72px 0 40px;}
+.exp-timeline{list-style:none;margin:0;padding:0;position:relative;}
+.exp-timeline::before{
+  content:"";position:absolute;top:8px;bottom:0;left:156px;width:2px;background:var(--ink);
+}
+.exp-item{
+  position:relative;display:grid;grid-template-columns:140px 34px 1fr;
+  padding-bottom:56px;
+}
+.exp-period{grid-column:1;grid-row:1;text-align:right;padding-top:0;}
+.exp-period time{display:block;font-family:var(--display);font-weight:700;font-size:2.3rem;line-height:1;color:var(--ink);}
+.exp-period span{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--red);margin-top:6px;}
+.exp-dot{
+  grid-column:2;grid-row:1;justify-self:center;margin-top:10px;position:relative;z-index:1;
+  width:16px;height:16px;background:var(--red);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--ink);
+}
+.exp-body{grid-column:3;grid-row:1;min-width:0;padding-left:20px;}
+.exp-grid{padding:0;}
+.exp-body .project-grid{grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+.exp-body .project-grid.exp-grid{max-width:none;}
+.exp-card{border:1px solid var(--line-strong);max-width:560px;}
+.exp-body .project h3,.exp-grid h3{margin-top:8px;}
+@media (max-width:900px){
+  .exp-body .project-grid{grid-template-columns:1fr;gap:22px;}
+}
+@media (max-width:640px){
+  .exp-timeline::before{left:7px;}
+  .exp-item{grid-template-columns:30px 1fr;padding-bottom:44px;}
+  .exp-dot{grid-column:1;grid-row:1;margin-left:0;justify-self:start;}
+  .exp-period{grid-column:2;grid-row:1;text-align:left;display:flex;align-items:baseline;gap:10px;padding-left:12px;margin-bottom:14px;}
+  .exp-period time{font-size:1.8rem;}
+  .exp-period span{margin-top:0;}
+  .exp-body{grid-column:2;grid-row:2;padding-left:12px;}
+}

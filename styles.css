@@ -493,10 +493,11 @@ section.skills{padding:8px 0 56px;}
 }
 
 /* -------- Gestión de prensa: banner + texto -------- */
-section.press{padding:8px 0 24px;}
+section.press-hero{padding:36px 0 8px;}
+section.press{padding:28px 0 24px;}
 .press-banner{
   position:relative;margin:0;border:1px solid var(--ink);overflow:hidden;
-  min-height:260px;display:flex;align-items:flex-end;background:var(--ink);
+  min-height:300px;display:flex;align-items:flex-end;background:var(--ink);
 }
 .press-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;border:0;}
 .press-banner::after{
@@ -505,7 +506,7 @@ section.press{padding:8px 0 24px;}
 }
 .press-banner figcaption{position:relative;z-index:1;padding:28px 32px 30px;max-width:760px;}
 .press-banner .eyebrow{color:#F0C9B3;}
-.press-banner h2{color:var(--paper);margin:10px 0 0;}
+.press-banner h1,.press-banner h2{color:var(--paper);margin:0;font-size:clamp(2rem,4.6vw,3.3rem);}
 .press-body{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:56px;margin-top:40px;align-items:start;}
 .press-text p:last-child{margin-bottom:0;}
 .press-now{border-left:3px solid var(--red);padding-left:18px;color:var(--ink);}
@@ -599,3 +600,67 @@ section.exp{padding:72px 0 40px;}
   .exp-item .exp-text,.exp-item .exp-card{grid-row:3 !important;}
   .exp-end{margin:-8px 0 0 -3px;}
 }
+
+/* -------- Etiquetas de la portada -------- */
+.hero-tags{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.hero-tags li{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--green);border:1px solid var(--green);padding:6px 10px 5px;line-height:1.2;
+}
+
+/* -------- Desplegables -------- */
+.disclosure{margin:22px 0 28px;}
+.disclosure > summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);
+  border:1.5px solid var(--ink);padding:14px 18px;
+  transition:background .15s ease,color .15s ease;
+}
+.disclosure > summary::-webkit-details-marker{display:none;}
+.disclosure > summary::after{
+  content:"+";font-family:var(--display);font-size:1.5rem;line-height:1;color:var(--red);flex:none;
+  transition:transform .2s ease;
+}
+.disclosure[open] > summary::after{content:"\2212";}
+.disclosure > summary:hover{background:var(--ink);color:var(--paper);}
+.disclosure-solid > summary{background:var(--ink);color:var(--paper);border-color:var(--ink);font-size:13.5px;padding:18px 22px;}
+.disclosure-solid > summary:hover{background:var(--red);border-color:var(--red);}
+.disclosure-solid > summary:hover::after{color:var(--paper);}
+.disclosure[open] > summary{border-bottom-width:4px;border-bottom-color:var(--red);}
+.skills-more .skills-list{display:block;margin:0;padding:6px 18px 8px;border:1.5px solid var(--ink);border-top:0;}
+.skills-more .skills-list li{font-size:.95rem;padding:10px 0 10px 22px;}
+.skills-more .skills-list li::before{top:17px;}
+.skills-more .skills-list li:last-child{border-bottom:0;}
+.skills-more{margin-bottom:26px;}
+.hero .btn-row{margin-top:4px;}
+
+/* -------- Gestión de prensa: texto y publicaciones -------- */
+.press-text{max-width:860px;}
+.press-actions{margin:22px 0 4px;}
+.pubs{margin-top:26px;}
+.pub-grid{
+  list-style:none;margin:0;padding:22px 0 0;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;
+}
+.pub-btn{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;height:100%;
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;
+  color:var(--ink);background:var(--panel);border:1px solid var(--ink);padding:14px 16px;
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+}
+.pub-btn::after{content:"\2197";color:var(--red);flex:none;}
+.pub-btn:hover,.pub-btn:focus-visible{background:var(--panel-hover);transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink);}
+
+/* -------- Trayectoria dentro del desplegable -------- */
+section.exp{padding:8px 0 0;}
+.exp-more{margin:0;}
+.exp-more > summary{padding:18px 22px;font-size:13.5px;}
+.exp-inner{padding:34px 0 0;}
+.exp-intro{max-width:820px;margin-bottom:34px;}
+.exp-intro .lede{font-size:1.1rem;}
+
+/* -------- Ajustes de portada -------- */
+.hero-name{font-size:clamp(2.1rem,4.3vw,3.5rem);white-space:normal;}
+.hero-name span{white-space:nowrap;}
+.hero-photo-wrap{align-self:start;position:sticky;top:110px;}
+@media (max-width:900px){.hero-photo-wrap{position:relative;top:auto;}}

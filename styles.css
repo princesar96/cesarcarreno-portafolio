@@ -664,3 +664,4 @@ section.exp{padding:8px 0 0;}
 .hero-name span{white-space:nowrap;}
 .hero-photo-wrap{align-self:start;position:sticky;top:110px;}
 @media (max-width:900px){.hero-photo-wrap{position:relative;top:auto;}}
+section.exp{padding:8px 0 64px;}

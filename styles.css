@@ -665,3 +665,24 @@ section.exp{padding:8px 0 0;}
 .hero-photo-wrap{align-self:start;position:sticky;top:110px;}
 @media (max-width:900px){.hero-photo-wrap{position:relative;top:auto;}}
 section.exp{padding:8px 0 64px;}
+
+/* -------- Portada v3: etiquetas naranjo, desplegables negros, botones al final -------- */
+.hero{padding:56px 0 24px;}
+.hero-role{margin-bottom:18px;}
+.hero-tags li{background:var(--red);border-color:var(--red);color:var(--paper);}
+section.actions{padding:8px 0 72px;}
+section.actions .disclosure{margin:0 0 12px;}
+.disclosure-solid > summary:active,
+.disclosure-solid > summary:focus-visible{background:var(--red);border-color:var(--red);}
+.disclosure-solid > summary:active::after{color:var(--paper);}
+.disclosure-solid[open] > summary{border-bottom:4px solid var(--red);}
+.skills-more .skills-list{
+  display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(6,auto);grid-auto-flow:column;
+  column-gap:48px;padding:8px 22px 10px;
+}
+@media (max-width:700px){
+  .skills-more .skills-list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;padding:6px 16px 8px;}
+}
+.exp-more > .exp-inner{padding:34px 0 24px;}
+section.actions .btn-row{margin-top:28px;}
+section.exp{padding:0;}

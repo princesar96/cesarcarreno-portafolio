@@ -810,3 +810,111 @@ section.pubs-stage{
   .bubbles li:nth-child(3n) .bubble,.bubbles li:nth-child(5n) .bubble{width:var(--sm);height:var(--sm);}
 }
 @media (prefers-reduced-motion: reduce){.bubbles li{animation:none;}}
+
+/* ===================== PRODUCCIÓN (rediseño) ===================== */
+.pr-hero{
+  position:relative;color:var(--paper);padding:92px 0 80px;min-height:480px;display:flex;align-items:flex-end;
+  background:
+    linear-gradient(90deg,rgba(21,24,31,.93) 0%,rgba(21,24,31,.78) 45%,rgba(21,24,31,.28) 100%),
+    url('/images/produccion-header.webp') center 35%/cover no-repeat;
+  border-bottom:5px solid var(--red);
+}
+section.pr-hero{padding:92px 0 80px;}
+.pr-hero-inner{width:100%;}
+.pr-hero h1{color:var(--paper);margin:0;font-size:clamp(3rem,8vw,6rem);line-height:.95;}
+.pr-sub{font-family:var(--mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:#F0C9B3;margin:18px 0 0;}
+.pr-lede{max-width:62ch;font-size:1.12rem;color:#E9ECF1;margin:22px 0 24px;}
+.pr-chips,.pr-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.pr-chips li{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px 6px;border:1px solid rgba(255,255,255,.55);color:var(--paper);background:rgba(21,24,31,.35);}
+.pr-tags li{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px 5px;background:var(--red);color:var(--paper);}
+
+section.pr-block{padding:88px 0;position:relative;overflow:hidden;}
+.pr-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;}
+.pr-text h2{font-size:clamp(2rem,4.2vw,3.2rem);margin:6px 0 14px;}
+.pr-text p{font-size:1.08rem;}
+.pr-tags{margin:6px 0 24px;}
+.pr-num{
+  display:block;font-family:var(--display);font-weight:700;font-size:clamp(3.4rem,7vw,5.4rem);line-height:.9;
+  color:transparent;-webkit-text-stroke:1.5px var(--red);
+}
+.pr-actions{display:flex;flex-wrap:wrap;gap:14px;}
+.pr-btn{
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;
+  background:var(--red);color:var(--paper);border:2px solid var(--ink);padding:14px 18px;
+  box-shadow:5px 5px 0 var(--ink);
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+}
+.pr-btn::after{content:"\2197";font-size:1.05em;}
+.pr-btn:hover,.pr-btn:focus-visible{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);background:var(--green);}
+.pr-btn-alt{background:var(--paper);color:var(--ink);}
+.pr-btn-alt:hover,.pr-btn-alt:focus-visible{background:var(--ink);color:var(--paper);}
+
+/* 01 Feria Pop */
+.pr-feria{
+  color:var(--paper);
+  background:linear-gradient(90deg,rgba(21,24,31,.92) 0%,rgba(21,24,31,.7) 100%),url('/images/feria-pop-main.webp') center/cover no-repeat;
+}
+.pr-feria .pr-text h2{color:var(--paper);}
+.pr-feria .pr-text p{color:#E9ECF1;}
+.pr-feria .pr-btn{border-color:var(--paper);box-shadow:5px 5px 0 var(--paper);}
+.pr-feria .pr-btn:hover{box-shadow:7px 7px 0 var(--paper);}
+.pr-feria .pr-btn-alt{background:var(--paper);color:var(--ink);}
+.pr-feria .pr-btn-alt:hover{background:var(--green);color:var(--paper);}
+.pr-posters{position:relative;min-height:470px;}
+.pr-poster{position:absolute;width:min(300px,56%);border:6px solid var(--paper);box-shadow:0 22px 40px -14px rgba(0,0,0,.7);transition:transform .25s ease;}
+.pr-poster.p1{left:2%;top:0;transform:rotate(-5deg);}
+.pr-poster.p2{right:2%;top:60px;transform:rotate(4deg);z-index:2;}
+.pr-poster:hover{transform:rotate(0) scale(1.05);z-index:3;}
+
+/* 02 El Otro Moreno */
+.pr-moreno{background:var(--panel);}
+.pr-grid-video{grid-template-columns:1.25fr 1fr;}
+.pr-media{position:relative;padding-bottom:70px;}
+.yt-lite{position:relative;aspect-ratio:16/9;background:var(--ink);border:2px solid var(--ink);box-shadow:10px 10px 0 var(--ink);}
+.yt-play{all:unset;cursor:pointer;display:block;position:absolute;inset:0;}
+.yt-play img{width:100%;height:100%;object-fit:cover;border:0;transition:transform .35s ease,filter .35s ease;}
+.yt-play:hover img{transform:scale(1.04);filter:brightness(.85);}
+.yt-btn{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--red);border:3px solid var(--paper);box-shadow:0 8px 24px rgba(0,0,0,.4);transition:transform .2s ease;}
+.yt-btn::before{content:"";position:absolute;left:50%;top:50%;margin:-14px 0 0 -9px;border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent var(--paper);}
+.yt-play:hover .yt-btn,.yt-play:focus-visible .yt-btn{transform:scale(1.12);}
+.yt-lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.pr-snap{position:absolute;right:-18px;bottom:0;width:46%;border:6px solid var(--paper);box-shadow:0 18px 34px -12px rgba(21,24,31,.6);transform:rotate(3deg);}
+.pr-mini{display:flex;gap:20px;align-items:flex-end;}
+.pr-mini img{width:128px;border:4px solid var(--paper);box-shadow:5px 5px 0 var(--ink);}
+
+/* 03 Dani Seguel */
+.pr-dani{background:linear-gradient(180deg,#fff 0,#FBF1E6 100%);}
+.pr-grid-ig{grid-template-columns:1.1fr 1fr;align-items:start;}
+.pr-duo{display:flex;gap:18px;align-items:flex-start;margin-top:6px;}
+.pr-photo{width:42%;border:5px solid var(--paper);box-shadow:8px 8px 0 var(--green);transform:rotate(-2deg);}
+.pr-afiche{width:42%;border:5px solid var(--paper);box-shadow:8px 8px 0 var(--red);transform:rotate(2.5deg);margin-top:26px;}
+.pr-ig{display:flex;flex-direction:column;align-items:center;gap:18px;}
+.ig-embed{width:100%;max-width:420px;height:640px;border:2px solid var(--ink);background:#fff;box-shadow:10px 10px 0 var(--ink);}
+
+/* 04 Lollapalooza */
+.pr-lolla{color:var(--paper);background:var(--ink);padding:0 !important;display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
+.pr-lolla-inner{padding:88px 28px 88px 0;max-width:calc(var(--max)/2 + 28px);margin-left:auto;width:100%;}
+.pr-lolla .pr-text h2{color:var(--paper);}
+.pr-lolla .pr-text p{color:#E9ECF1;}
+.pr-lolla-img{width:100%;height:100%;object-fit:cover;border:0 !important;min-height:360px;}
+
+@media (max-width:900px){
+  .pr-hero{padding:72px 0 56px;min-height:420px;background:linear-gradient(0deg,rgba(21,24,31,.94) 0%,rgba(21,24,31,.7) 60%,rgba(21,24,31,.4) 100%),url('/images/produccion-header.webp') 70% 35%/cover no-repeat;}
+  section.pr-block{padding:64px 0;}
+  .pr-grid,.pr-grid-video,.pr-grid-ig{grid-template-columns:1fr;gap:44px;}
+  .pr-posters{min-height:430px;max-width:520px;margin:0 auto;width:100%;}
+  .pr-media{padding-bottom:54px;}
+  .pr-snap{right:-6px;}
+  .pr-lolla{grid-template-columns:1fr;}
+  .pr-lolla-inner{padding:64px 28px 40px;max-width:none;}
+  .pr-lolla-img{height:320px;}
+}
+@media (max-width:480px){
+  .pr-poster{width:58%;}
+  .pr-posters{min-height:390px;}
+  .pr-btn{padding:12px 14px;font-size:12px;}
+  .ig-embed{height:700px;box-shadow:6px 6px 0 var(--ink);}
+  .yt-lite{box-shadow:6px 6px 0 var(--ink);}
+  .pr-mini img{width:104px;}
+}

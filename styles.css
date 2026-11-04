@@ -738,3 +738,75 @@ section.proof{padding:36px 0 40px;margin-top:8px;border-top:1px solid var(--line
 @media (prefers-reduced-motion: reduce){
   .disclosure::details-content{transition:none;}
 }
+
+/* -------- Prueba de resultados v2 -------- */
+.proof-grid{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;}
+.proof-stat{border-left:3px solid var(--red);padding-left:20px;}
+.proof-stat .stat{font-size:clamp(2.6rem,5vw,3.6rem);margin:0 0 6px;}
+.proof-stat .stat-label{margin:0;}
+.proof-media{margin:0;}
+.proof-media p{margin:6px 0 0;font-family:var(--display);font-weight:600;font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.55;color:var(--ink);}
+.proof-media em{font-style:italic;font-weight:500;color:var(--ink-soft);}
+@media (max-width:760px){.proof-grid{grid-template-columns:1fr;gap:22px;}}
+
+/* -------- Gestión de prensa v3: franja superior y burbujas -------- */
+section.band.band-top{margin-top:0;border-top:0;border-bottom:5px solid var(--red);padding:56px 0 58px;}
+.band-top .band-head h1{color:var(--paper);margin:10px 0 0;font-size:clamp(2rem,4.6vw,3.4rem);max-width:none;}
+.band-top .marquee{gap:12px;}
+.band-top .marquee-track li{font-size:clamp(.95rem,1.7vw,1.3rem);}
+.marquee-row:nth-child(4) .marquee-track{animation-name:marquee-right;animation-duration:125s;}
+.marquee-row:nth-child(3) .marquee-track{animation-duration:135s;}
+.marquee-row:nth-child(2) .marquee-track{animation-duration:110s;}
+.marquee-row:nth-child(1) .marquee-track{animation-duration:120s;}
+.marquee-row:nth-child(4) .marquee-track li{color:#F6E3D2;font-style:italic;}
+section.press{padding:56px 0 8px;}
+.press-text p{font-size:1.08rem;line-height:1.7;}
+
+section.pubs-stage{
+  padding:72px 0 88px;margin-top:40px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 18%,rgba(184,78,36,.13) 0,transparent 38%),
+    radial-gradient(circle at 88% 70%,rgba(44,110,94,.14) 0,transparent 40%),
+    linear-gradient(180deg,#fff 0,#FBF1E6 100%);
+  border-top:1px solid var(--line-strong);
+}
+.pubs-head{max-width:640px;margin-bottom:34px;}
+.pubs-head h2{margin:10px 0 10px;}
+.pubs-head p{margin:0;color:var(--ink-soft);}
+.bubbles{list-style:none;margin:0;padding:10px 0;display:flex;flex-wrap:wrap;justify-content:center;gap:22px 18px;}
+.bubbles li{--t:7s;--d:0s;animation:bubble-float var(--t) ease-in-out var(--d) infinite;}
+.bubble{
+  display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;
+  font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
+  width:var(--s,158px);height:var(--s,158px);padding:18px;border-radius:50%;line-height:1.35;
+  color:var(--paper);background:var(--ink);border:3px solid var(--ink);
+  box-shadow:0 14px 26px -12px rgba(21,24,31,.45);
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;
+}
+.bubble::after{content:"\2197";margin-left:6px;color:#F0C9B3;}
+.bubble:hover,.bubble:focus-visible{transform:scale(1.12);box-shadow:0 20px 34px -12px rgba(21,24,31,.55);}
+.bubbles li:nth-child(4n+1) .bubble{background:var(--red);border-color:var(--red);}
+.bubbles li:nth-child(4n+2) .bubble{background:var(--ink);}
+.bubbles li:nth-child(4n+3) .bubble{background:var(--green);border-color:var(--green);}
+.bubbles li:nth-child(4n) .bubble{background:var(--panel);border-color:var(--ink);color:var(--ink);}
+.bubbles li:nth-child(4n) .bubble::after{color:var(--red);}
+.bubbles li:nth-child(3n){--s:184px;}
+.bubbles li:nth-child(5n){--s:140px;}
+.bubbles li:nth-child(2n){--t:8.5s;--d:-2s;}
+.bubbles li:nth-child(3n){--t:10s;--d:-4s;}
+.bubbles li:nth-child(5n){--t:6.5s;--d:-1s;}
+.bubbles li:nth-child(7n){--t:9s;--d:-5s;}
+.bubbles li:hover{animation-play-state:paused;}
+@keyframes bubble-float{
+  0%,100%{transform:translate(0,0);}
+  33%{transform:translate(6px,-12px);}
+  66%{transform:translate(-6px,-5px);}
+}
+@media (max-width:640px){
+  .bubbles{gap:14px 10px;}
+  .bubble{padding:12px;font-size:10.5px;--s:112px;width:var(--sm,112px);height:var(--sm,112px);}
+  .bubbles li:nth-child(3n){--sm:132px;}
+  .bubbles li:nth-child(5n){--sm:100px;}
+  .bubbles li:nth-child(3n) .bubble,.bubbles li:nth-child(5n) .bubble{width:var(--sm);height:var(--sm);}
+}
+@media (prefers-reduced-motion: reduce){.bubbles li{animation:none;}}

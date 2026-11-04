@@ -52,3 +52,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  var sc = document.querySelector('.avh-scroller');
+  if (!sc) return;
+  document.querySelectorAll('.avh-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var card = sc.querySelector('.avh-item');
+      var step = card ? card.getBoundingClientRect().width + 24 : 320;
+      sc.scrollBy({ left: step * parseInt(b.getAttribute('data-dir'), 10), behavior: 'smooth' });
+    });
+  });
+  var down = false, sx = 0, sl = 0, moved = false;
+  sc.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    down = true; moved = false; sx = e.clientX; sl = sc.scrollLeft;
+  });
+  window.addEventListener('pointermove', function (e) {
+    if (!down) return;
+    var dx = e.clientX - sx;
+    if (Math.abs(dx) > 5) { moved = true; sc.classList.add('dragging'); }
+    sc.scrollLeft = sl - dx;
+  });
+  window.addEventListener('pointerup', function () { down = false; sc.classList.remove('dragging'); });
+  sc.addEventListener('click', function (e) { if (moved) { e.preventDefault(); moved = false; } }, true);
+});

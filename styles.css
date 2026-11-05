@@ -1030,3 +1030,36 @@ section.sm-sec{padding:84px 0;}
   .sm-dot{grid-column:1;justify-self:start;margin-top:22px;}
   .sm-l .sm-card,.sm-r .sm-card{grid-column:2;justify-self:stretch;max-width:none;}
 }
+
+/* -------- Portada: diagramación equilibrada (texto y foto de la misma altura) -------- */
+.hero{padding:44px 0 24px;}
+.hero-grid{grid-template-columns:1.3fr .7fr;gap:56px;align-items:stretch;}
+.hero-grid > div:first-child{display:flex;flex-direction:column;justify-content:center;padding:8px 0;}
+.hero-photo-wrap{align-self:stretch;position:relative;top:auto;min-height:420px;}
+.hero-photo-wrap img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:40% 22%;}
+.hero-name{font-size:clamp(2.6rem,5.2vw,4.5rem);line-height:1.02;margin:14px 0 0;}
+.hero-role{font-size:clamp(11.5px,1.1vw,13.5px);margin:16px 0 22px;padding-top:16px;border-top:2px solid var(--ink);max-width:max-content;}
+.hero-bio{max-width:58ch;font-size:1.08rem;line-height:1.65;margin-bottom:0;}
+.hero-tags{margin-top:24px;}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px;}
+  .hero-grid > div:first-child{padding:0;}
+  .hero-photo-wrap{max-width:340px;min-height:0;align-self:auto;}
+  .hero-photo-wrap img{position:static;height:auto;aspect-ratio:4/5;}
+}
+
+/* -------- Portada: mejor diagramación (v4) -------- */
+.hero{padding:44px 0 28px;}
+.hero-grid{grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr);gap:56px;align-items:center;}
+.hero-name{font-size:clamp(2.4rem,5.2vw,4.3rem);margin:12px 0 0;line-height:1.02;}
+.hero-role{font-size:clamp(12px,1.15vw,14px);margin:18px 0 22px;padding-bottom:20px;border-bottom:1px solid var(--line-strong);}
+.hero-bio{max-width:none;font-size:1.1rem;line-height:1.65;color:var(--ink-soft);}
+.hero-tags{margin-top:22px;}
+.hero-photo-wrap{align-self:center;justify-self:end;width:100%;max-width:440px;position:relative;box-shadow:12px 12px 0 var(--red);}
+.hero-photo-wrap img{aspect-ratio:4/5;max-height:min(640px,calc(100vh - 140px));min-height:400px;width:100%;object-fit:cover;object-position:30% 25%;}
+@media (max-width:900px){
+  .hero{padding:36px 0 16px;}
+  .hero-grid{grid-template-columns:1fr;gap:36px;}
+  .hero-photo-wrap{justify-self:start;max-width:420px;box-shadow:9px 9px 0 var(--red);margin-right:9px;position:relative;top:auto;}
+  .hero-photo-wrap img{max-height:none;}
+}

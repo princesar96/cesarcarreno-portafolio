@@ -651,7 +651,7 @@ section.exp{padding:8px 0 64px;}
 .hero{padding:56px 0 24px;}
 .hero-role{margin-bottom:18px;}
 .hero-tags li{background:var(--red);border-color:var(--red);color:var(--paper);}
-section.actions{padding:8px 0 72px;}
+section.actions{padding:8px 0 40px;}
 section.actions .disclosure{margin:0 0 12px;}
 .disclosure-solid > summary:active,
 .disclosure-solid > summary:focus-visible{background:var(--red);border-color:var(--red);}
@@ -669,7 +669,7 @@ section.actions .btn-row{margin-top:28px;}
 section.exp{padding:0;}
 
 /* -------- Prueba de resultados -------- */
-section.proof{padding:36px 0 40px;margin-top:8px;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);}
+section.proof{padding:30px 0 32px;margin-top:0;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);}
 .proof-stats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .proof-stats li{border-left:3px solid var(--red);padding-left:18px;}
 .proof-stats .stat{font-size:clamp(2.1rem,4vw,3rem);margin:0 0 6px;}
@@ -1013,7 +1013,7 @@ section.sm-sec{padding:84px 0;}
 }
 
 /* -------- Portada editorial -------- */
-.hero{padding:0 0 64px;}
+.hero{padding:0 0 28px;}
 .hero-banner{
   position:relative;overflow:hidden;background:var(--ink);
   min-height:clamp(480px,64vh,620px);
@@ -1044,7 +1044,7 @@ section.sm-sec{padding:84px 0;}
 .hero-body{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:48px;align-items:start;}
 .hero-card{
   grid-column:1;grid-row:1;position:relative;z-index:2;margin-top:-110px;
-  background:var(--paper);border-top:5px solid var(--red);padding:34px 36px 30px;
+  background:var(--paper);border-top:5px solid var(--red);padding:34px 36px 0;
 }
 .hero-bio{max-width:none;font-size:1.08rem;line-height:1.7;margin:0;color:var(--ink-soft);}
 .hero-bio::first-letter{
@@ -1060,7 +1060,7 @@ section.sm-sec{padding:84px 0;}
 }
 
 @media (max-width:900px){
-  .hero{padding-bottom:40px;}
+  .hero{padding-bottom:28px;}
   .hero-banner{min-height:500px;align-items:flex-end;padding-bottom:0;}
   .hero-banner::after{background:linear-gradient(0deg,rgba(21,24,31,.92) 0%,rgba(21,24,31,.7) 45%,rgba(21,24,31,.05) 80%);}
   .hero-banner-img{top:auto;bottom:0;width:100%;height:103%;object-position:20% 14%;}
